@@ -51,13 +51,3 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
-
-.footer {
-  padding:15px;
-  background: #000;
-  border-radius: 10px;
-  border: 2px solid #fff;
-  position: relative;
-  top: 160px;
-  right:230px;
-}
