@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Classifier</title>
+  <link rel="stylesheet" href="style.css">
+
+<body>
+    <div class="container">
+        <h2>Password <span> Classifier</span></h2>
+        <input type="password" id="passwordInput" placeholder="Enter your password">
+        <button onclick="checkPassword()">Check</button>
+        <div class="result" id="result"></div>
+    </div>
+    <div class="footer">&#8482;nelkeys.. &nbsp; All rights reserved.</div>
+
+    <script>
+        function checkPassword() {
+          var password = document.getElementById("passwordInput").value;
+          var strength = calculatePasswordStrength(password);
+    
+          var resultElement = document.getElementById("result");
+          if (strength === "strong") {
+            resultElement.innerText = "Strong password!";
+            resultElement.style.color = "#00ff00";
+          } else if (strength === "moderate") {
+            resultElement.innerText = "Moderate password.";
+            resultElement.style.color = "#ff9900";
+          } else {
+            resultElement.innerText = "Weak password.";
+            resultElement.style.color = "#ff0000";
+          }
+        }
+    
+        function calculatePasswordStrength(password) {
+          // This section is to customize the password strength type
+          if (password.length >= 8 && /[a-z]/.test(password) && /\d/.test(password)) {
+            return "strong";
+          } else if (password.length >= 6 && /\d/.test(password)) {
+            return "moderate";
+          } else {
+            return "weak";
+          }
+        }
+    </script>
+</body>
+</html>    
